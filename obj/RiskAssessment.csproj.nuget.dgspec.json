@@ -57,6 +57,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[5.0.10, )"
+            },
+            "Ocelot": {
+              "target": "Package",
+              "version": "[13.8.0, )"
             }
           },
           "imports": [

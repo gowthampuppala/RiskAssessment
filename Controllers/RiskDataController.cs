@@ -17,11 +17,26 @@ namespace RiskAssessment.Controllers
         // GET: api/<RiskDataController>
         [HttpGet]
 
-        public IEnumerable<CollateralRisk> Get()
+        public IActionResult Get()
         {
             using (var _context = new CustomerDbContext())
             {
-                return _context.collateralRisks.ToList();
+                try
+                {
+                    var risks = _context.collateralRisks.ToList();
+                    if (risks.Count == 0)
+                    {
+                        return StatusCode(404, "No Risk found");
+                    }
+                    return Ok(risks);
+                }
+                catch (Exception)
+                {
+                    return StatusCode(500, "An error has occured");
+                    
+                }
+                //return Ok();
+                //return _context.collateralRisks.ToList();
 
             }
         }
@@ -32,8 +47,8 @@ namespace RiskAssessment.Controllers
         {
             using (var _context = new CustomerDbContext())
             {
-
-                return "RiskPErcent" + _context.collateralRisks.FirstOrDefault(x=>x.LoanId == id).RiskPercent.ToString();
+             
+                return "RiskPercent : " + _context.collateralRisks.FirstOrDefault(x=>x.LoanId == id).RiskPercent.ToString();
             }
         }
 
@@ -41,6 +56,7 @@ namespace RiskAssessment.Controllers
         [HttpPost]
         public void Post([FromBody] string value)
         {
+
         }
 
         // PUT api/<RiskDataController>/5

@@ -61,3 +61,12 @@ C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\obj\Debug\netcoreapp3.
 C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\obj\Debug\netcoreapp3.1\RiskAssessment.dll
 C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\obj\Debug\netcoreapp3.1\RiskAssessment.pdb
 C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\obj\Debug\netcoreapp3.1\RiskAssessment.genruntimeconfig.cache
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\ocelot.json
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.MiddlewareAnalysis.dll
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DiagnosticAdapter.dll
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\Ocelot.dll
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\obj\Debug\netcoreapp3.1\RiskAssessment.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\keert\Desktop\Gowtham\Cts-Stage-4\RiskAssessment\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
