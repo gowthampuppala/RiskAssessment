@@ -24,6 +24,10 @@ namespace RiskAssessment
                 })
             .ConfigureAppConfiguration((hostingContext,config)=> {
                 config.AddJsonFile("ocelot.json");
+            }).ConfigureLogging(builder =>
+            {
+                builder.SetMinimumLevel(LogLevel.Trace);
+                builder.AddLog4Net("log4net.config");
             });
                 
     }

@@ -15,5 +15,7 @@ namespace RiskAssessment.Models
                 .UseSqlServer(@"Data Source=KEERTHANA;Initial Catalog=CustomerDB;Integrated Security=True");
         }
         public DbSet<CollateralRisk> collateralRisks { get; set; }
+        public DbSet<CurrentValue> currentValues { get; set; }
+        public DbSet<Collateral> collateral { get; set; }
     }
 }

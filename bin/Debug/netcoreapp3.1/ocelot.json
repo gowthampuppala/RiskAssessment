@@ -9,7 +9,7 @@
           "Port": "56588"
         }
       ],
-      "UpstreamPathTemplate": "/user",
+      "UpstreamPathTemplate": "/Data",
       "UpstreamHttpMethod": [ "GET", "POST" ]
     }
   ]
