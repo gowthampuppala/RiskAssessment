@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>RiskAssessment</name>
+    </assembly>
+    <members>
+        <member name="M:RiskAssessment.Controllers.RiskDataController.Get(System.Int32,System.Int32)">
+            <summary>
+             Search risks by GoldRate and LandRate
+             </summary>
+             <return>
+             Returns list of risks likelt to occur
+             </return>
+             <remarks>
+             Sample request
+             GET /api/RiskData/{goldrate}/{landrate  }
+             </remarks>
+             <response code="200">Returns Risks after assessing</response>
+        </member>
+    </members>
+</doc>

@@ -15,6 +15,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using System.IO;
 
 namespace RiskAssessment
 {
@@ -32,7 +35,15 @@ namespace RiskAssessment
         {
             services.AddOcelot();
             services.AddControllers();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Risk Assessment", Version = "v1" });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name }.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
+
+
+            });
             string SECRET = Configuration.GetSection("secret").Value;
             var key = Encoding.ASCII.GetBytes(SECRET);
 
@@ -68,20 +79,28 @@ namespace RiskAssessment
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public async void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public async void Configure(IApplicationBuilder app, IWebHostEnvironment env, ILoggerFactory loggerFactory)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Risk v1");
+                    c.RoutePrefix = string.Empty;
+                });
             }
+            loggerFactory.AddLog4Net();
             // Enable middleware to serve generated Swagger as a JSON endpoint.
-            app.UseSwagger();
-            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
-            // specifying the Swagger JSON endpoint.
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "RiskAssesment");
-            });
+            /*            app.UseSwagger();
+                        // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+                        // specifying the Swagger JSON endpoint.
+                        app.UseSwaggerUI(c =>
+                        {
+                            c.SwaggerEndpoint("/swagger/v1/swagger.json", "RiskAssesment");
+                            c.RoutePrefix = string.Empty;
+                        });*/
             app.UseRouting();
             app.UseAuthentication();
 
